@@ -7,7 +7,19 @@
 .item-add-form input {
     width: 75%;
 }
-/* 
-.item-add-form button {
-    width: 25%;
-} */
+
+.item-add-form input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.item-add-form input:focus:-moz-placeholder {
+    color: transparent;
+}
+
+.item-add-form input:focus::-moz-placeholder {
+    color: transparent;
+}
+
+.item-add-form input:focus:-ms-input-placeholder {
+    color: transparent;
+}

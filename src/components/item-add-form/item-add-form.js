@@ -5,8 +5,6 @@ export default class ItemAddForm extends Component {
     constructor() {
         super()
 
-        this.placeholderText = 'Enter task'
-
         this.state = {
             label: ''
         }
@@ -36,9 +34,10 @@ export default class ItemAddForm extends Component {
                 <input
                     type="text"
                     className="form-control"
-                    placeholder={ this.placeholderText }
+                    placeholder={ 'Enter task' }
                     onChange={ this.onLabelChange }
-                    value={ this.state.label } />
+                    value={ this.state.label }
+                    onFocus={ this.onInputFocus } />
                 <button 
                     className="btn btn-outline-secondary">
                     Add item
