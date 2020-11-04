@@ -4,7 +4,7 @@ import AppHeader from '../app-header'
 import SearchPanel from '../search-panel'
 import TodoList from '../todo-list'
 import ItemStatusFilter from '../item-status-filter'
-import ItemAddFrom from '../item-add-form/item-add-form'
+import ItemAddForm from '../item-add-form/item-add-form'
 
 export default class App extends Component {
     constructor() {
@@ -90,7 +90,7 @@ export default class App extends Component {
                     onToggleImportant={ this.onToggleImportant }
                     onToggleDone={ this.onToggleDone } />
                     
-                <ItemAddFrom onItemAdded={ this.addItem } />
+                <ItemAddForm onItemAdded={ this.addItem } />
             </div>
         )       
     }
