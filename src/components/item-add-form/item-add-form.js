@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 import './item-add-form.css'
 
 export default class ItemAddForm extends Component {
@@ -6,10 +6,11 @@ export default class ItemAddForm extends Component {
         super()
 
         this.placeholderText = 'Enter task'
-        this.inputRef = createRef()
+
         this.state = {
             label: ''
         }
+
         this.onLabelChange = (event) => {
             this.setState({
                 label: event.target.value
@@ -18,12 +19,11 @@ export default class ItemAddForm extends Component {
 
         this.onSubmit = (event) => {
             event.preventDefault()
-            if (this.inputRef.current.value) {
+            if (this.state.label) {
                 this.props.onItemAdded(this.state.label)
                 this.setState({
                     label: ''
                 })
-                this.inputRef.current.value = ''
             }            
         }
     }
@@ -38,7 +38,7 @@ export default class ItemAddForm extends Component {
                     className="form-control"
                     placeholder={ this.placeholderText }
                     onChange={ this.onLabelChange }
-                    ref={ this.inputRef } />
+                    value={ this.state.label } />
                 <button 
                     className="btn btn-outline-secondary">
                     Add item
